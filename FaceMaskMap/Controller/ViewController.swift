@@ -11,9 +11,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Task {
+            do {
+                try await fetchData()
+            } catch {
+                print(error)
+            }
+        }
     }
-
-
+    
+    func fetchData() async throws {
+        NetworkController.shared.getMaskListNetworkRequest()
+    }
 }
 

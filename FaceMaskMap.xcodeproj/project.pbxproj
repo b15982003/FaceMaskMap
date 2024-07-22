@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C8060312C4CF06E0058F50E /* MaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060302C4CF06E0058F50E /* MaskData.swift */; };
+		2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060322C4CF44C0058F50E /* NetworkController.swift */; };
+		2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */; };
+		2C8060382C4CFE050058F50E /* MaskListNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060372C4CFE050058F50E /* MaskListNetworkRequest.swift */; };
 		2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF342C4B9B9200662B55 /* AppDelegate.swift */; };
 		2C83EF372C4B9B9200662B55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */; };
 		2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF382C4B9B9200662B55 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		2C8060302C4CF06E0058F50E /* MaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskData.swift; sourceTree = "<group>"; };
+		2C8060322C4CF44C0058F50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestOperation.swift; sourceTree = "<group>"; };
+		2C8060372C4CFE050058F50E /* MaskListNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskListNetworkRequest.swift; sourceTree = "<group>"; };
 		2C83EF312C4B9B9200662B55 /* FaceMaskMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMaskMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C83EF342C4B9B9200662B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,11 +78,22 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		2C80602F2C4CF0360058F50E /* NetWork */ = {
+		2C80602F2C4CF0360058F50E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2C8060362C4CFD510058F50E /* Mask */,
+				2C8060322C4CF44C0058F50E /* NetworkController.swift */,
+				2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */,
 			);
-			path = NetWork;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2C8060362C4CFD510058F50E /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				2C8060372C4CFE050058F50E /* MaskListNetworkRequest.swift */,
+			);
+			path = Mask;
 			sourceTree = "<group>";
 		};
 		2C83EF282C4B9B9100662B55 = {
@@ -98,7 +115,7 @@
 		2C83EF332C4B9B9200662B55 /* FaceMaskMap */ = {
 			isa = PBXGroup;
 			children = (
-				2C80602F2C4CF0360058F50E /* NetWork */,
+				2C80602F2C4CF0360058F50E /* Network */,
 				2C80602E2C4CEFE90058F50E /* Storyboard */,
 				2C80602D2C4CEFE30058F50E /* Model */,
 				2C80602C2C4CEFCA0058F50E /* View */,
@@ -186,6 +203,9 @@
 			files = (
 				2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */,
 				2C83EF3F2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld in Sources */,
+				2C8060382C4CFE050058F50E /* MaskListNetworkRequest.swift in Sources */,
+				2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */,
+				2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */,
 				2C8060312C4CF06E0058F50E /* MaskData.swift in Sources */,
 				2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */,
 				2C83EF372C4B9B9200662B55 /* SceneDelegate.swift in Sources */,

@@ -7,20 +7,25 @@
 
 import Foundation
 
-struct MaskData: Hashable {
+struct MaskData: Codable {
+    var type: String = ""
+    var features: [Features]
+}
+
+struct Features: Codable {
     var type: String = ""
     var properties: Properties
     var geometry: Geometry
 }
 
-struct Properties: Hashable {
+struct Properties: Codable {
     var id: String = ""
     var name: String = ""
     var phone: String = ""
     var address: String = ""
     var mask_adult: Int = 0
     var mask_child: Int = 0
-    var updated: Data
+    var updated: String = ""
     var available: String = ""
     var note: String = ""
     var custom_note: String = ""
@@ -31,7 +36,8 @@ struct Properties: Hashable {
     var service_periods = ""
 }
 
-struct Geometry: Hashable {
+struct Geometry: Codable {
     var type: String
-    var coordinates: [String]
+    var coordinates: [Double]
 }
+
