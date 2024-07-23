@@ -21,7 +21,6 @@ class FaceMaskTableViewController: UITableViewController {
     }
     
     func fetchData() {
-        // 從資料庫取得資料
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             
             let fetchRequest: NSFetchRequest<FaceMask> = FaceMask.fetchRequest()
@@ -32,6 +31,7 @@ class FaceMaskTableViewController: UITableViewController {
 //        NetworkController.shared.getMaskListNetworkRequest()
     }
     
+    // MARK: - 資料庫拿資料
     func fetchMaskData() {
         // 從資料庫取得資料
         let fetchRequest: NSFetchRequest<FaceMask> = FaceMask.fetchRequest()
@@ -54,6 +54,7 @@ class FaceMaskTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - 更新 UI
     func updateSnapshot(animatingChange: Bool = false) {
         //  確認控制器中是否有包含所有的讀取物件
         if let fetcheckObjects = fetchResultController.fetchedObjects {
@@ -88,13 +89,42 @@ class FaceMaskTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return faceMaskList.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
+    }
+    
+    
+    // MARK: - 刪除資料
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        guard let faceMask = self.dataSource.itemIdentifier(for: indexPath) else {
+            return UISwipeActionsConfiguration()
+        }
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+
+                context.delete(faceMask)
+                appDelegate.saveContext()
+                
+                self.updateSnapshot(animatingChange: true)
+            }
+
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor.systemRed
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+            
+        return swipeConfiguration
     }
 }
 
