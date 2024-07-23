@@ -10,10 +10,18 @@ import CoreData
 
 class FaceMaskTableViewController: UITableViewController {
     
+    lazy var dataSource = configureDataSource()
     var faceMaskList: [FaceMask] = []
     var fetchResultController: NSFetchedResultsController<FaceMask>!
-    lazy var dataSource = configureDataSource()
-
+    var countries: [String] = []
+    
+    let screenWith = UIScreen.main.bounds.width - 10
+    let screenHeight = UIScreen.main.bounds.height / 7
+    var selectRow = 0
+    var selectitem = ""
+    
+    @IBOutlet var btnPickerView: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -27,8 +35,9 @@ class FaceMaskTableViewController: UITableViewController {
             guard let request = try? appDelegate.persistentContainer.viewContext.fetch(fetchRequest), request.isEmpty == false else { return }
             print("requestData = \(request.count)" )
             faceMaskList = request
+            upDateSelectItem()
         }
-//        NetworkController.shared.getMaskListNetworkRequest()
+        //        NetworkController.shared.getMaskListNetworkRequest()
     }
     
     // MARK: - 資料庫拿資料
@@ -57,10 +66,13 @@ class FaceMaskTableViewController: UITableViewController {
     // MARK: - 更新 UI
     func updateSnapshot(animatingChange: Bool = false) {
         //  確認控制器中是否有包含所有的讀取物件
-        if let fetcheckObjects = fetchResultController.fetchedObjects {
-            faceMaskList = fetcheckObjects
+        print(self.selectitem)
+        print(self.selectitem.isEmpty)
+        if self.selectitem.isEmpty || self.selectitem.contains("全部"){
+            if let fetcheckObjects = fetchResultController.fetchedObjects {
+                faceMaskList = fetcheckObjects
+            }
         }
-        
         // 建立快照並填入資料
         var snapshot = NSDiffableDataSourceSnapshot<Section, FaceMask>()
         snapshot.appendSections([.all])
@@ -86,6 +98,17 @@ class FaceMaskTableViewController: UITableViewController {
                 return cell
             }
         return dataSource
+    }
+    
+    // MARK: - 更新快速搜尋清單
+    func upDateSelectItem(){
+        countries.removeAll()
+        countries.append("全部")
+        for faceMask in faceMaskList {
+            if !countries.contains(faceMask.county) && !faceMask.county.isEmpty{
+                countries.append(faceMask.county)
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -126,11 +149,63 @@ class FaceMaskTableViewController: UITableViewController {
             
         return swipeConfiguration
     }
+    
+    @IBAction func popUpPicker(_ sender: Any) {
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: screenWith, height: screenHeight)
+        
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWith / 2, height: screenHeight))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        pickerView.selectRow(selectRow, inComponent: 0, animated: false)
+        vc.view.addSubview(pickerView)
+        pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
+        pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+        
+        let alert = UIAlertController(title: "選擇區域", message: "", preferredStyle: .alert)
+        alert.popoverPresentationController?.sourceView = btnPickerView
+        alert.popoverPresentationController?.sourceRect = btnPickerView.bounds
+        alert.setValue(vc, forKey: "contentViewController")
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
+            self.selectRow = pickerView.selectedRow(inComponent: 0)
+            self.selectitem = self.countries[self.selectRow]
+            self.btnPickerView.setTitle(self.selectitem, for: .normal)
+            self.faceMaskList = self.faceMaskList.filter({ $0.county.contains(self.selectitem)})
+            self.updateSnapshot(animatingChange: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension FaceMaskTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         updateSnapshot()
+    }
+}
+
+extension FaceMaskTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWith, height: screenHeight))
+        label.text = countries[row]
+        label.sizeToFit()
+        return label
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        countries.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 30
     }
 }
 
