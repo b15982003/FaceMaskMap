@@ -6,22 +6,24 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task {
-            do {
-                try await fetchData()
-            } catch {
-                print(error)
-            }
-        }
+        fetchData()
     }
     
-    func fetchData() async throws {
-        NetworkController.shared.getMaskListNetworkRequest()
+    func fetchData() {
+        // 從資料庫取得資料
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            
+            let fetchRequest: NSFetchRequest<FaceMask> = FaceMask.fetchRequest()
+            guard let request = try? appDelegate.persistentContainer.viewContext.fetch(fetchRequest), request.isEmpty == false else { return }
+            print("requestData = \(request.count)" )
+        }
+//        NetworkController.shared.getMaskListNetworkRequest()
     }
 }
 

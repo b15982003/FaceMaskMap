@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C8060312C4CF06E0058F50E /* MaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060302C4CF06E0058F50E /* MaskData.swift */; };
+		2C003AAF2C4E8BF000B545BC /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AAE2C4E8BF000B545BC /* CoreDataHandler.swift */; };
+		2C003AB12C4E8C4800B545BC /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB02C4E8C4800B545BC /* PersistentContainer.swift */; };
+		2C003AB62C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */; };
+		2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */; };
 		2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060322C4CF44C0058F50E /* NetworkController.swift */; };
 		2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */; };
 		2C8060382C4CFE050058F50E /* MaskListNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060372C4CFE050058F50E /* MaskListNetworkRequest.swift */; };
+		2C80603A2C4E50A60058F50E /* FaceMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060392C4E50A60058F50E /* FaceMask.swift */; };
 		2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF342C4B9B9200662B55 /* AppDelegate.swift */; };
 		2C83EF372C4B9B9200662B55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */; };
 		2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF382C4B9B9200662B55 /* ViewController.swift */; };
@@ -18,13 +22,32 @@
 		2C83EF3F2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF3D2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld */; };
 		2C83EF412C4B9B9300662B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C83EF402C4B9B9300662B55 /* Assets.xcassets */; };
 		2C83EF442C4B9B9300662B55 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2C83EF432C4B9B9300662B55 /* Base */; };
+		B0BD9AE3873CE97CDCD565B3 /* Pods_FaceMaskMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED23C2A976C4898E717246E /* Pods_FaceMaskMap.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C80603D2C4E84E90058F50E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2C8060302C4CF06E0058F50E /* MaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskData.swift; sourceTree = "<group>"; };
+		15A9B74D856F39FF0CCA086A /* Pods-FaceMaskMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceMaskMap.debug.xcconfig"; path = "Target Support Files/Pods-FaceMaskMap/Pods-FaceMaskMap.debug.xcconfig"; sourceTree = "<group>"; };
+		2C003AAE2C4E8BF000B545BC /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		2C003AB02C4E8C4800B545BC /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
+		2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskDataResponse.swift; sourceTree = "<group>"; };
 		2C8060322C4CF44C0058F50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestOperation.swift; sourceTree = "<group>"; };
 		2C8060372C4CFE050058F50E /* MaskListNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskListNetworkRequest.swift; sourceTree = "<group>"; };
+		2C8060392C4E50A60058F50E /* FaceMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMask.swift; sourceTree = "<group>"; };
 		2C83EF312C4B9B9200662B55 /* FaceMaskMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMaskMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C83EF342C4B9B9200662B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +57,8 @@
 		2C83EF402C4B9B9300662B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C83EF432C4B9B9300662B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C83EF452C4B9B9300662B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		318C21F41DA0E540A852B8DB /* Pods-FaceMaskMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceMaskMap.release.xcconfig"; path = "Target Support Files/Pods-FaceMaskMap/Pods-FaceMaskMap.release.xcconfig"; sourceTree = "<group>"; };
+		CED23C2A976C4898E717246E /* Pods_FaceMaskMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceMaskMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +66,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BD9AE3873CE97CDCD565B3 /* Pods_FaceMaskMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C003AAD2C4E8B9100B545BC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2C83EF3D2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld */,
+				2C003AAE2C4E8BF000B545BC /* CoreDataHandler.swift */,
+				2C003AB02C4E8C4800B545BC /* PersistentContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2C003AB42C4E8CFC00B545BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2C80602B2C4CEFB00058F50E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +109,8 @@
 		2C80602D2C4CEFE30058F50E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C8060302C4CF06E0058F50E /* MaskData.swift */,
+				2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */,
+				2C8060392C4E50A60058F50E /* FaceMask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +146,8 @@
 			children = (
 				2C83EF332C4B9B9200662B55 /* FaceMaskMap */,
 				2C83EF322C4B9B9200662B55 /* Products */,
+				6ABA68B530297B1BA59020F7 /* Pods */,
+				3DD6320745FC8619A77E9C79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +162,8 @@
 		2C83EF332C4B9B9200662B55 /* FaceMaskMap */ = {
 			isa = PBXGroup;
 			children = (
+				2C003AB42C4E8CFC00B545BC /* Utils */,
+				2C003AAD2C4E8B9100B545BC /* CoreData */,
 				2C80602F2C4CF0360058F50E /* Network */,
 				2C80602E2C4CEFE90058F50E /* Storyboard */,
 				2C80602D2C4CEFE30058F50E /* Model */,
@@ -125,9 +174,25 @@
 				2C83EF402C4B9B9300662B55 /* Assets.xcassets */,
 				2C83EF422C4B9B9300662B55 /* LaunchScreen.storyboard */,
 				2C83EF452C4B9B9300662B55 /* Info.plist */,
-				2C83EF3D2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld */,
 			);
 			path = FaceMaskMap;
+			sourceTree = "<group>";
+		};
+		3DD6320745FC8619A77E9C79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED23C2A976C4898E717246E /* Pods_FaceMaskMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6ABA68B530297B1BA59020F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15A9B74D856F39FF0CCA086A /* Pods-FaceMaskMap.debug.xcconfig */,
+				318C21F41DA0E540A852B8DB /* Pods-FaceMaskMap.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C83EF482C4B9B9300662B55 /* Build configuration list for PBXNativeTarget "FaceMaskMap" */;
 			buildPhases = (
+				B54CE882997A4A09891F2197 /* [CP] Check Pods Manifest.lock */,
 				2C83EF2D2C4B9B9200662B55 /* Sources */,
 				2C83EF2E2C4B9B9200662B55 /* Frameworks */,
 				2C83EF2F2C4B9B9200662B55 /* Resources */,
+				2C80603D2C4E84E90058F50E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,17 +263,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B54CE882997A4A09891F2197 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceMaskMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C83EF2D2C4B9B9200662B55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */,
+				2C003AAF2C4E8BF000B545BC /* CoreDataHandler.swift in Sources */,
 				2C83EF3F2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld in Sources */,
+				2C003AB12C4E8C4800B545BC /* PersistentContainer.swift in Sources */,
+				2C003AB62C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift in Sources */,
 				2C8060382C4CFE050058F50E /* MaskListNetworkRequest.swift in Sources */,
 				2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */,
 				2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */,
-				2C8060312C4CF06E0058F50E /* MaskData.swift in Sources */,
+				2C80603A2C4E50A60058F50E /* FaceMask.swift in Sources */,
+				2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */,
 				2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */,
 				2C83EF372C4B9B9200662B55 /* SceneDelegate.swift in Sources */,
 			);
@@ -355,6 +451,7 @@
 		};
 		2C83EF492C4B9B9300662B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15A9B74D856F39FF0CCA086A /* Pods-FaceMaskMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -383,6 +480,7 @@
 		};
 		2C83EF4A2C4B9B9300662B55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 318C21F41DA0E540A852B8DB /* Pods-FaceMaskMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

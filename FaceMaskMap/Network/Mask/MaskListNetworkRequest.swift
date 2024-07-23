@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MaskListNetworkRequest: NetworkRequestOperation {
     
@@ -19,11 +20,9 @@ class MaskListNetworkRequest: NetworkRequestOperation {
 
     override func success(_ data: Data) {
         super.success(data)
-        
-        var result: MaskData?
-        
+        var result: MaskDataResponse?
         do {
-            result = try JSONDecoder().decode(MaskData.self, from: data)
+            result = try JSONDecoder().decode(MaskDataResponse.self, from: data)
         } catch {
             print("Fail \(error.localizedDescription)")
         }
@@ -32,7 +31,11 @@ class MaskListNetworkRequest: NetworkRequestOperation {
             return
         }
         
-        print(json.features[0].properties.name)
+        DispatchQueue.main.async {
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                FaceMask.setFaskMaskListFromServer(result!.features , context: appDelegate.persistentContainer.viewContext)
+            }
+        }
     }
 
     override func failure(_ error: NSError, _ data: Data) {

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
+class NetworkRequestOperation: Operation {
     
     var data: Data?
     var error: NSError?
@@ -22,19 +22,18 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
     var internalFinished: Bool = false
     
     func initSession(_ url: URL, method: String) {
-        
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = method
-        
         let urlconfig = URLSessionConfiguration.default
-
-        session = Foundation.URLSession(
-            configuration: urlconfig,
-            delegate: self,
-            delegateQueue: nil
-        )
-
+        session = Foundation.URLSession(configuration: urlconfig,delegate: self,delegateQueue: nil)
         task = session!.dataTask(with: request as URLRequest)
+    }
+    
+    override func main() {
+        guard let task = task else {
+            return
+        }
+        task.resume()
     }
     
     override var isFinished: Bool {
@@ -48,7 +47,17 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
         }
     }
     
+    func success(_ data: Data) {
+        self.data = data
+    }
+    
+    func failure(_ error: NSError, _ data: Data) {
+        self.error = error
+        self.data = data
+    }
+}
 
+extension NetworkRequestOperation:  URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
     func urlSession(_: Foundation.URLSession,
                     dataTask _: URLSessionDataTask,
                     didReceive response: URLResponse,
@@ -56,7 +65,7 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
         
         if isCancelled {
             isFinished = true
-            task?.cancel()
+            task!.cancel()
             return
         }
         
@@ -67,9 +76,7 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
         completionHandler(.allow)
     }
     
-    func urlSession(_: Foundation.URLSession,
-                    dataTask _: URLSessionDataTask,
-                    didReceive data: Data) {
+    func urlSession(_: Foundation.URLSession,dataTask _: URLSessionDataTask,didReceive data: Data) {
 
         if isCancelled {
             isFinished = true
@@ -80,9 +87,7 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
         incomingData.append(data)
     }
     
-    func urlSession(_: URLSession,
-                    task: URLSessionTask,
-                    didCompleteWithError error: Error?){
+    func urlSession(_: URLSession,task: URLSessionTask,didCompleteWithError error: Error?){
 
         if isCancelled {
            isFinished = true
@@ -99,20 +104,4 @@ class NetworkRequestOperation: Operation, URLSessionDelegate, URLSessionTaskDele
         session?.finishTasksAndInvalidate()
         isFinished = true
    }
-    
-    override func main() {
-        guard let task = task else {
-            return
-        }
-        task.resume()
-    }
-    
-    func success(_ data: Data) {
-        self.data = data
-    }
-    
-    func failure(_ error: NSError, _ data: Data) {
-        self.error = error
-        self.data = data
-    }
 }

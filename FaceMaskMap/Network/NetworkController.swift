@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol NetworkControllerDelegate: class {
+protocol NetworkControllerDelegate: AnyObject {
     func completedNetworkRequest(_ requestClassName: String, response: Data?, error: NSError?)
 }
 

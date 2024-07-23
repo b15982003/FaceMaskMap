@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MaskData: Codable {
+struct MaskDataResponse: Codable {
     var type: String = ""
     var features: [Features]
 }
@@ -23,21 +23,22 @@ struct Properties: Codable {
     var name: String = ""
     var phone: String = ""
     var address: String = ""
-    var mask_adult: Int = 0
-    var mask_child: Int = 0
     var updated: String = ""
     var available: String = ""
     var note: String = ""
     var custom_note: String = ""
-    var website = ""
-    var county = ""
-    var town = ""
-    var cunli = ""
+    var website: String = ""
+    var county: String = ""
+    var town: String = ""
+    var cunli: String = ""
     var service_periods = ""
+    var mask_adult: Int64 = 0
+    var mask_child: Int64 = 0
 }
 
 struct Geometry: Codable {
     var type: String
     var coordinates: [Double]
 }
+
 
