@@ -10,6 +10,8 @@
 		2C003AAF2C4E8BF000B545BC /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AAE2C4E8BF000B545BC /* CoreDataHandler.swift */; };
 		2C003AB12C4E8C4800B545BC /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB02C4E8C4800B545BC /* PersistentContainer.swift */; };
 		2C003AB62C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */; };
+		2C003AB82C4F68D800B545BC /* FaceMaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */; };
+		2C003ABA2C4F6E7900B545BC /* FaceMaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB92C4F6E7900B545BC /* FaceMaskTableViewCell.swift */; };
 		2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */; };
 		2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060322C4CF44C0058F50E /* NetworkController.swift */; };
 		2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */; };
@@ -17,7 +19,6 @@
 		2C80603A2C4E50A60058F50E /* FaceMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060392C4E50A60058F50E /* FaceMask.swift */; };
 		2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF342C4B9B9200662B55 /* AppDelegate.swift */; };
 		2C83EF372C4B9B9200662B55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */; };
-		2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF382C4B9B9200662B55 /* ViewController.swift */; };
 		2C83EF3C2C4B9B9200662B55 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2C83EF3B2C4B9B9200662B55 /* Base */; };
 		2C83EF3F2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C83EF3D2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld */; };
 		2C83EF412C4B9B9300662B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C83EF402C4B9B9300662B55 /* Assets.xcassets */; };
@@ -43,6 +44,8 @@
 		2C003AAE2C4E8BF000B545BC /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		2C003AB02C4E8C4800B545BC /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
+		2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskTableViewController.swift; sourceTree = "<group>"; };
+		2C003AB92C4F6E7900B545BC /* FaceMaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskTableViewCell.swift; sourceTree = "<group>"; };
 		2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskDataResponse.swift; sourceTree = "<group>"; };
 		2C8060322C4CF44C0058F50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestOperation.swift; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		2C83EF312C4B9B9200662B55 /* FaceMaskMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMaskMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C83EF342C4B9B9200662B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C83EF362C4B9B9200662B55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2C83EF382C4B9B9200662B55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C83EF3B2C4B9B9200662B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C83EF3E2C4B9B9200662B55 /* FaceMaskMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceMaskMap.xcdatamodel; sourceTree = "<group>"; };
 		2C83EF402C4B9B9300662B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		2C80602B2C4CEFB00058F50E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C83EF382C4B9B9200662B55 /* ViewController.swift */,
+				2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,6 +104,7 @@
 		2C80602C2C4CEFCA0058F50E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C003AB92C4F6E7900B545BC /* FaceMaskTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,14 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C83EF392C4B9B9200662B55 /* ViewController.swift in Sources */,
 				2C003AAF2C4E8BF000B545BC /* CoreDataHandler.swift in Sources */,
+				2C003AB82C4F68D800B545BC /* FaceMaskTableViewController.swift in Sources */,
 				2C83EF3F2C4B9B9200662B55 /* FaceMaskMap.xcdatamodeld in Sources */,
 				2C003AB12C4E8C4800B545BC /* PersistentContainer.swift in Sources */,
 				2C003AB62C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift in Sources */,
 				2C8060382C4CFE050058F50E /* MaskListNetworkRequest.swift in Sources */,
 				2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */,
 				2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */,
+				2C003ABA2C4F6E7900B545BC /* FaceMaskTableViewCell.swift in Sources */,
 				2C80603A2C4E50A60058F50E /* FaceMask.swift in Sources */,
 				2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */,
 				2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */,
