@@ -20,12 +20,25 @@ class FaceMaskTableViewController: UITableViewController {
     var selectRow = 0
     var selectitem = ""
     
+    var refresh = UIRefreshControl()
+    
     @IBOutlet var btnPickerView: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = refresh
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "refresh")
+        self.refreshControl?.addTarget(self, action: #selector(loadData), for: UIControl.Event.valueChanged)
+        self.tableView.addSubview(refreshControl!)
+
         fetchMaskData()
     }
+   
+    // MARK: - 下拉做事
+    @objc func loadData(){
+        callFaceMaskListAPI()
+       }
     
     // MARK: - 資料庫拿資料
     func fetchMaskData() {
@@ -50,14 +63,18 @@ class FaceMaskTableViewController: UITableViewController {
             
             // 確認有沒有資料
             guard let request = fetchResultController.fetchedObjects, request.isEmpty == false else {
-                NetworkController.shared.getMaskListNetworkRequest()
-                NetworkController.shared.addDelegate(self)
+                callFaceMaskListAPI()
                 return
             }
         
             faceMaskList = request
             upDateSelectItem()
         }
+    }
+    
+    private func callFaceMaskListAPI() {
+        NetworkController.shared.getMaskListNetworkRequest()
+        NetworkController.shared.addDelegate(self)
     }
     
     // MARK: - 更新 UI
@@ -210,6 +227,11 @@ extension FaceMaskTableViewController: NetworkControllerDelegate {
     func completedNetworkRequest(_ requestClassName: String, response: Data?, error: NSError?) {
         print("API Success")
         NetworkController.shared.removeDelegate(self)
+        DispatchQueue.main.sync {
+            if self.refreshControl?.isRefreshing == true {
+                self.refreshControl?.endRefreshing()
+            }
+        }
     }
 }
 

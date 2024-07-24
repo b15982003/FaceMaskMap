@@ -72,7 +72,6 @@ extension FaceMask {
                     let results = try context.fetch(request)
                     for result in results {
                         context.delete(result)
-                        appDelegate.saveContext()
                     }
                 } catch {
                     fatalError("Could not fetch. \(error)")
