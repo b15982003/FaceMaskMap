@@ -24,20 +24,7 @@ class FaceMaskTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         fetchMaskData()
-    }
-    
-    func fetchData() {
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            
-            let fetchRequest: NSFetchRequest<FaceMask> = FaceMask.fetchRequest()
-            guard let request = try? appDelegate.persistentContainer.viewContext.fetch(fetchRequest), request.isEmpty == false else { return }
-            print("requestData = \(request.count)" )
-            faceMaskList = request
-            upDateSelectItem()
-        }
-        //        NetworkController.shared.getMaskListNetworkRequest()
     }
     
     // MARK: - 資料庫拿資料
@@ -60,6 +47,16 @@ class FaceMaskTableViewController: UITableViewController {
             } catch {
                 print(error)
             }
+            
+            // 確認有沒有資料
+            guard let request = fetchResultController.fetchedObjects, request.isEmpty == false else {
+                NetworkController.shared.getMaskListNetworkRequest()
+                NetworkController.shared.addDelegate(self)
+                return
+            }
+        
+            faceMaskList = request
+            upDateSelectItem()
         }
     }
     
@@ -206,6 +203,13 @@ extension FaceMaskTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 30
+    }
+}
+
+extension FaceMaskTableViewController: NetworkControllerDelegate {
+    func completedNetworkRequest(_ requestClassName: String, response: Data?, error: NSError?) {
+        print("API Success")
+        NetworkController.shared.removeDelegate(self)
     }
 }
 

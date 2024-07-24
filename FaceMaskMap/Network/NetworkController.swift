@@ -78,9 +78,7 @@ class NetworkController: NSObject {
         let className = String(describing: type(of: operation))
 
         for delegate in delegates {
-            delegate.completedNetworkRequest(className,
-                                             response: operation.data as Data?,
-                                             error: operation.error)
+            delegate.completedNetworkRequest(className,response: operation.data as Data?,error: operation.error)
         }
     }
 }
