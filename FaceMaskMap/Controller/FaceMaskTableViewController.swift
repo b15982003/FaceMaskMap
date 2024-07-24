@@ -33,6 +33,9 @@ class FaceMaskTableViewController: UITableViewController {
         self.tableView.addSubview(refreshControl!)
 
         fetchMaskData()
+        
+        // 變更返回文字
+        navigationItem.backButtonTitle = "返回"
     }
    
     // MARK: - 下拉做事
@@ -162,6 +165,15 @@ class FaceMaskTableViewController: UITableViewController {
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
             
         return swipeConfiguration
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFaceMaskDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! FaceMaskDetailViewController
+                destinationController.faceMaskData = self.faceMaskList[indexPath.row]
+            }
+        }
     }
     
     @IBAction func popUpPicker(_ sender: Any) {

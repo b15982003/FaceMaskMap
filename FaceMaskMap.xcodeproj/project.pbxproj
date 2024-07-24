@@ -12,6 +12,7 @@
 		2C003AB62C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */; };
 		2C003AB82C4F68D800B545BC /* FaceMaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */; };
 		2C003ABA2C4F6E7900B545BC /* FaceMaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C003AB92C4F6E7900B545BC /* FaceMaskTableViewCell.swift */; };
+		2C293C492C50EF0D00EA9449 /* FaceMaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C293C482C50EF0D00EA9449 /* FaceMaskDetailViewController.swift */; };
 		2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */; };
 		2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060322C4CF44C0058F50E /* NetworkController.swift */; };
 		2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */; };
@@ -46,6 +47,7 @@
 		2C003AB52C4E8D5C00B545BC /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
 		2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskTableViewController.swift; sourceTree = "<group>"; };
 		2C003AB92C4F6E7900B545BC /* FaceMaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskTableViewCell.swift; sourceTree = "<group>"; };
+		2C293C482C50EF0D00EA9449 /* FaceMaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskDetailViewController.swift; sourceTree = "<group>"; };
 		2C8060302C4CF06E0058F50E /* MaskDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskDataResponse.swift; sourceTree = "<group>"; };
 		2C8060322C4CF44C0058F50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2C8060342C4CF8240058F50E /* NetworkRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestOperation.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2C003AB72C4F68D800B545BC /* FaceMaskTableViewController.swift */,
+				2C293C482C50EF0D00EA9449 /* FaceMaskDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				2C8060352C4CF8240058F50E /* NetworkRequestOperation.swift in Sources */,
 				2C8060332C4CF44C0058F50E /* NetworkController.swift in Sources */,
 				2C003ABA2C4F6E7900B545BC /* FaceMaskTableViewCell.swift in Sources */,
+				2C293C492C50EF0D00EA9449 /* FaceMaskDetailViewController.swift in Sources */,
 				2C80603A2C4E50A60058F50E /* FaceMask.swift in Sources */,
 				2C8060312C4CF06E0058F50E /* MaskDataResponse.swift in Sources */,
 				2C83EF352C4B9B9200662B55 /* AppDelegate.swift in Sources */,
