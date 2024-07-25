@@ -58,16 +58,15 @@ extension FaceMask {
                 faceMaskData.service_periods = faceMask.properties.service_periods
                 faceMaskData.coordinates_lat = faceMask.geometry.coordinates[0]
                 faceMaskData.coordinates_lng = faceMask.geometry.coordinates[1]
-                guard let _ = try? context.save() else { return }     
+                context.saveContext()
             }
         }
     }
     
     static func deleteFaceMaskList(_ context: NSManagedObjectContext) {
         context.performAndWait {
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                let context = appDelegate.persistentContainer.viewContext
-                let request = NSFetchRequest<FaceMask>(entityName: "FaceMask")
+            // 從資料庫取得資料
+                let request: NSFetchRequest<FaceMask> = FaceMask.fetchRequest()
                 do {
                     let results = try context.fetch(request)
                     for result in results {
@@ -77,6 +76,5 @@ extension FaceMask {
                     fatalError("Could not fetch. \(error)")
                 }
             }
-        }
     }
 }

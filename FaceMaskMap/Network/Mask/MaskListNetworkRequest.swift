@@ -32,10 +32,9 @@ class MaskListNetworkRequest: NetworkRequestOperation {
         }
         
         DispatchQueue.main.async {
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                FaceMask.deleteFaceMaskList(appDelegate.persistentContainer.viewContext)
-                FaceMask.setFaskMaskListFromServer(result!.features , context: appDelegate.persistentContainer.viewContext)
-            }
+            let context = CoreDataHelper.shared.mainManagedObjectContext
+            FaceMask.deleteFaceMaskList(context)
+            FaceMask.setFaskMaskListFromServer(json.features , context: context)
         }
     }
 
