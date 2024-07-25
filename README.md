@@ -9,3 +9,8 @@ Swift 練習
   - 項目左滑可以移除
   - 透過快速搜尋縣市口罩資訊
   - 下拉重打 API 更新 DB 內容
+
+<img src="https://imgur.com/TQhGD1c.jpg" width="220" height="420"></a>
+<img src="https://imgur.com/vVoRXLI.png" width="220" height="420">
+<img src="https://imgur.com/6rLdSFv.png" width="220" height="420">
+<img src="https://imgur.com/S1zJx8b.png" width="220" height="420">
